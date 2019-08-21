@@ -7,6 +7,7 @@
 }
 
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -59,7 +60,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.WillAttend, htmlAttributes: new { @class = "control-label col-md-4" })
                             <div class="col-md-10">
-                                @Html.DropDownList("Will you attend?", new List<SelectListItem>
+                                @Html.DropDownList("WillAttend", new List<SelectListItem>
                                 {
                                 new SelectListItem { Text = "Yes", Value="true" },
                                 new SelectListItem { Text = "No", Value="false" }

@@ -12,5 +12,14 @@
   </EntityType>
   <EntityContainer Name="GuestManagementEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="GuestLists" EntityType="Self.GuestList" />
+    <EntitySet Name="UserComments" EntityType="Models.UserComment" />
   </EntityContainer>
+  <EntityType Name="UserComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

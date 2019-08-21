@@ -10,7 +10,16 @@
     <Property Name="Phone" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="WillAttend" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="UserComments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comments" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="ModelsStoreContainer">
     <EntitySet Name="GuestList" EntityType="Self.GuestList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserComments" EntityType="Self.UserComments" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

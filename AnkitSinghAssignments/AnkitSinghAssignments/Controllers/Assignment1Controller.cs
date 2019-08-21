@@ -50,7 +50,6 @@ namespace AnkitSinghAssignments.Controllers
                     smtp.Send(message);
                 }
 
-
                 // Insert form data to database.
                 string connectionString = ConfigurationManager.ConnectionStrings["GuestListContext"].ConnectionString;
 
@@ -67,7 +66,7 @@ namespace AnkitSinghAssignments.Controllers
                         cmd.ExecuteNonQuery();
                         return View("Thanks", guestResponse);
                     }
-                }           
+                }
             }
             else
             {

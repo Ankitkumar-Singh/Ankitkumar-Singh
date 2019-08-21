@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6bc6e479294d493aa2bace58f3e46f7d" Name="Diagram1">
         <EntityTypeShape EntityType="Models.GuestList" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.UserComment" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

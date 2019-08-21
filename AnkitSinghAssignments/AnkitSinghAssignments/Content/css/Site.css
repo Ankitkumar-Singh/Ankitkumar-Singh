@@ -4,13 +4,13 @@
     color: #fff;
 }
 
-
 .btn-white {
     color: #512bd4;
     background-color: #fff;
     border-color: transparent;
     font-family: "Segoe UI Semibold","Segoe UI",Helvetica,Arial,sans-serif;
 }
+
 .field-validation-error {
     color: #f00;
 }
@@ -32,27 +32,74 @@
 .validation-summary-valid {
     display: none;
 }
-.footer-content{
-    margin-top:170px;
-    padding:20px 0px;
-    color:white !important;
-    text-align:center;
 
+.footer-content {
+    margin-top: 170px;
+    padding: 20px 0px;
+    color: white !important;
+    text-align: center;
 }
+
 .mb-3 {
-    margin-top:40px;
+    margin-top: 40px;
 }
-.nav-link{
-    color:#fff !important;
+
+.nav-link {
+    color: #fff !important;
 }
 
 .bs-docs-section {
     margin-top: 4em;
 }
+
 .bs-component {
     position: relative;
     margin-top: 50px;
 }
+
 .border {
     padding: 25px;
+}
+
+.post-comments .img-thumbnail {
+    padding: 0px;
+}
+
+.post-comments .card {
+    position: relative;
+}
+
+    .post-comments .card .card-header:after, .post-comments .card .card-header:before {
+        position: absolute;
+        top: 11px;
+        left: -16px;
+        right: 100%;
+        width: 0;
+        height: 0;
+        display: block;
+        content: " ";
+        border-color: transparent;
+        border-style: solid solid outset;
+        pointer-events: none;
+    }
+
+    .post-comments .card .card-header:after {
+        border-width: 15px;
+        border-right-color: #2780e3;
+        margin-top: -2px;
+        margin-left: -13px;
+    }
+
+    .post-comments .card .card-header:before {
+        border-right-color: #ddd;
+        border-width: 8px;
+    }
+
+.avatar-outer {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-image: linear-gradient(180deg, #2780e3 0%,#6facef 100%);
+    /*border: #2780e3 solid 1px;*/
+    padding: 15px;
+    border-radius: 50%;
 }

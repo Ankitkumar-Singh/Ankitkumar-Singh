@@ -1,0 +1,102 @@
+﻿@model IPagedList<AnkitSinghAssignments.Models.DepartmentNewTable>
+@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="bs-docs-section">
+    <div class="container">
+        <div class="page-header">
+            <h3>Assignment 9. Implement a module to allow Search Sort with Pagination on Departments List</h3>
+            <p>
+                Implement a module to allow Search Sort with Pagination on Departments List. Apply search and Sort for following fields:
+                <br> 1. Department Name,<br> 2. Department Location<br> 3. Employee Count
+            </p>
+        </div>
+
+        @*Form Contains Radio Buttons and TextBox for Search Functionality*@
+        @using (@Html.BeginForm("Index", "Assignment9", FormMethod.Get))
+        {
+            <section class="radiobuttons text-info">
+                <label class="text-info">Search By:</label>&nbsp;&nbsp;&nbsp;
+                @Html.RadioButton("searchBy", "DepartmentName", true) Department Name &nbsp;&nbsp;&nbsp;
+                @Html.RadioButton("searchBy", "Location") Location&nbsp;&nbsp;&nbsp;
+                @Html.RadioButton("searchBy", "TotalEmployee") Employee Count
+                <br>
+                <p>
+                    @Html.TextBox("search") <input type="submit" value="search" class="btn btn-md btn-primary" />
+                </p>
+            </section>
+        }
+        @using (Html.BeginForm("MultipleDelete", "Assignment9", FormMethod.Post))
+        {
+            <table class="table table-bordered">
+                <tr class="text-center table-primary">
+                    <th>
+                        <input type="checkbox" id="checkAll" />
+                        Select All
+                    </th>
+                    <th>
+                        @Html.ActionLink("Deparatment Id", "Index", new { sortBy = ViewBag.SortIdParameter }, new { @class = "" })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Deparatment Name", "Index", new { sortBy = ViewBag.SortNameParameter, searchBy = Request["searchBy"], search = Request["search"] })
+                    </th>
+                    <th>
+                        Deparatment Details
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().TotalEmployee)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.First().Location)
+                    </th>
+                </tr>
+                @*If their is no any single row is selected then message is displayed*@
+                @if (Model.Count() == 0)
+                {
+                    <tr>
+                        <td colspan="4">
+                            No records match search criteria
+                        </td>
+                    </tr>
+                }
+                @* Showing the selected row*@
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr class="text-center">
+                            <td>
+                                <input type="checkbox" name="departmentDelete" id="departmentDelete" value="@item.Dept_Id" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dept_Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dept_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dept_Details)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalEmployee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            <input type="submit" value="Delete" id="btnSubmit" class="btn btn-lg btn-danger" />
+        }
+        @* Pagination is displayed *@
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"], sortBy = Request["sortBy"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
+
+    </div>
+</div>
+
+<script src="~/Content/js/jquery-3.0.0.min.js"></script>
+<script src="~/Content/js/multipleDelete.js"></script>

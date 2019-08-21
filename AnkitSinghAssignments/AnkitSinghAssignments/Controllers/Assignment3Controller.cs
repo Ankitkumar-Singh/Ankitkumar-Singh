@@ -1,9 +1,7 @@
-﻿using AnkitSinghAssignments.Models;
-using System.Data;
+﻿using BusinessLayer;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using BusinessLayer;
-using System.Collections.Generic;
 
 namespace AnkitSinghAssignments.Controllers
 {
@@ -15,7 +13,7 @@ namespace AnkitSinghAssignments.Controllers
         {
             GuestBusinessLayer guestBusinessLayer = new GuestBusinessLayer();
             List<Guest> guest = guestBusinessLayer.Guests.ToList();
-            return View(guest);            
+            return View(guest);
         }
 
         [HttpGet]

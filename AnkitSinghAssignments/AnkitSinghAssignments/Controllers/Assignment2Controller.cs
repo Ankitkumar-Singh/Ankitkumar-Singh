@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using AnkitSinghAssignments.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using AnkitSinghAssignments.Models;
 
 namespace AnkitSinghAssignments.Controllers
 {
@@ -11,7 +11,7 @@ namespace AnkitSinghAssignments.Controllers
         public ActionResult Index()
         {
             GuestListContext guestListContext = new GuestListContext();
-            List <ListOfGuest> guests = guestListContext.ListOfGuest.ToList();
+            List<ListOfGuest> guests = guestListContext.ListOfGuest.ToList();
             return View(guests);
         }
 
