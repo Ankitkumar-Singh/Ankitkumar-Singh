@@ -13,5 +13,6 @@ namespace AnkitSinghAssignments
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
     }
 }

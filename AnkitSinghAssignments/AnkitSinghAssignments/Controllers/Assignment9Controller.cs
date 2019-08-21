@@ -13,7 +13,7 @@ namespace WebApplication5.Controllers
         //DepartmentNewDataModel object is created
         private GuestManagementEntities1 db = new GuestManagementEntities1();
 
-        #region "Index Action Method"        
+        #region "Index action method  with search and sort"        
         /// <summary>
         /// Index Action Method Contains Search,Sort And Pagination FunctioNALITY
         /// </summary>
@@ -66,14 +66,7 @@ namespace WebApplication5.Controllers
         }
         #endregion
 
-        //[HttpPost, ActionName("MultipleDelete")]
-        //public ActionResult MultipleDelete(IEnumerable<int> departmentDelete)
-        //{
-        //    db.DepartmentNewTables.Where(x => departmentDelete.Contains(x.Dept_Id)).ToList().ForEach(x => db.DepartmentNewTables.Remove(x));
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
+        #region TO delete Multiple selected values
         [HttpPost]
         public ActionResult MultipleDelete(IEnumerable<int> departmentDelete)
         {
@@ -88,6 +81,13 @@ namespace WebApplication5.Controllers
 
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        #endregion
+
+        [HandleError]
+        public ActionResult notFound()
+        {
+            return View();
         }
 
         #region "Dispose Method"       

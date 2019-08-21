@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\images\bg.jpg" />
     <Content Include="Assets\images\human.png" />
     <Content Include="Assets\images\person.jpg" />
     <Content Include="Assets\images\person.png" />
@@ -116,6 +117,7 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-3.0.0.min.js" />
     <Content Include="Content\js\jquery.validate.min.js" />
@@ -146,19 +148,27 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuestDataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Assignment11Controller.cs" />
     <Compile Include="Controllers\Assignment1Controller.cs" />
     <Compile Include="Controllers\Assignment2Controller.cs" />
     <Compile Include="Controllers\Assignment3Controller.cs" />
     <Compile Include="Controllers\Assignment4Controller.cs" />
+    <Compile Include="Controllers\Assignment6Controller.cs" />
     <Compile Include="Controllers\Assignment7Controller.cs" />
     <Compile Include="Controllers\Assignment9Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Common\RemoteClientServer.cs" />
     <Compile Include="Models\DepartmentNewDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,6 +212,7 @@
     <Compile Include="Models\UserComment.cs">
       <DependentUpon>GuestDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TableHelper\TableHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +244,9 @@
     <Content Include="Views\Assignment7\Create.cshtml" />
     <Content Include="Views\Assignment7\Index.cshtml" />
     <Content Include="Views\Assignment9\Index.cshtml" />
+    <Content Include="Views\Assignment11\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Assignment6\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -242,7 +256,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

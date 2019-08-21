@@ -1,16 +1,17 @@
-﻿@model AnkitSinghAssignments.Models.GuestResponse
+﻿@model AnkitSinghAssignments.Models.GuestList
+
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
 }
 
-
-@* Form to get inuput details of guest.  *@
 <div class="container">
     <div class="card border-primary mb-3">
-        <div class="card-header">Confirm your avaibility</div>
+        <div class="card-header">Email validation and avaibility checking</div>
         <div class="col-md-6 card-body offset-3">
             @using (Html.BeginForm())
             {
+                @Html.AntiForgeryToken()
+
                 <div class="form-group">
                     <label>Your name:</label>
                     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
@@ -43,3 +44,7 @@
         </div>
     </div>
 </div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

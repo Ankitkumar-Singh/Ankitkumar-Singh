@@ -2,45 +2,45 @@
 @{
 
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Assignment Two";
+    ViewBag.Title = "Assignment";
 
 }
 @* Page to show deatils of one  *@
-    <div class="container">
-        <div class="jumbotron header-message">
-            <div class="container" id="mainContent">
-                <div class="btn btn-white btn-lg">@Html.ActionLink("Home", "Index","Assignment1")</div>
-                <div class="btn btn-white btn-lg">@Html.ActionLink("Back", "Index")</div>
-                <div class="row bs-docs-section border">
-                    <div class="col-md-6 text-center">
-                        <img class="rounded-circle" src="~/Assets/images/person.jpg" width="150" height="120" />
-                        <h3 class="font-weight-bold">@Model.Name</h3>
+<div class="container">
+    <div class="jumbotron header-message">
+        <div class="container" id="mainContent">
+            <div class="btn btn-white btn-lg">@Html.ActionLink("Home", "Index", "Assignment1")</div>
+            <div class="btn btn-white btn-lg">@Html.ActionLink("Back", "Index")</div>
+            <div class="row bs-docs-section border">
+                <div class="col-md-6 text-center">
+                    <img class="rounded-circle" src="~/Assets/images/person.jpg" width="150" height="120" />
+                    <h3 class="font-weight-bold">@Model.Name</h3>
+                </div>
+
+                <div class="col-md-6  bs-docs-section">
+                    <div class="row">
+                        <h4 class="col-md-6 font-weight-bold"> Email: </h4>
+                        <h4 class="col-md-6 ">@Model.Email</h4>
                     </div>
+                    <div class="row">
+                        <h4 class="col-md-6 font-weight-bold"> Phone: </h4>
+                        <h4 class="col-md-6">@Model.Phone</h4>
+                    </div>
+                    <div class="row">
+                        <h4 class="font-weight-bold col-md-6"> Will Attend: </h4>
+                        @if (Model.WillAttend == true)
+                        {
+                            <h4 class="col-md-6 ">Yes</h4>
+                        }
+                        else
+                        {
+                            <h4 class="col-md-6 ">No</h4>
 
-                    <div class="col-md-6  bs-docs-section">
-                        <div class="row">
-                            <h4 class="col-md-6 font-weight-bold"> Email: </h4>
-                            <h4 class="col-md-6 ">@Model.Email</h4>
-                        </div>
-                        <div class="row">
-                            <h4 class="col-md-6 font-weight-bold"> Phone: </h4>
-                            <h4 class="col-md-6">@Model.Phone</h4>
-                        </div>
-                        <div class="row">
-                            <h4 class="font-weight-bold col-md-6"> Will Attend: </h4>
-                            @if (Model.WillAttend == true)
-                            {
-                                <h4 class="col-md-6 ">Yes</h4>
-                            }
-                            else
-                            {
-                                <h4 class="col-md-6 ">No</h4>
+                        }
 
-                            }
-
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

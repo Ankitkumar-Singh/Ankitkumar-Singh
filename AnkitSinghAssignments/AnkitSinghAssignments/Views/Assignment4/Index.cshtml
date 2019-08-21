@@ -3,64 +3,60 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Assignments";
-
 }
- 
-    <div class="bs-docs-section">
-        <div class="container">
-            <div class="page-header">
-                <h1 id="tables">List of guest. (Using Entity Framework)</h1>
-            </div>
-            @Html.ActionLink("Create New", "Create", new object { }, new { @class = "bs-component btn btn-primary" })
+<div class="bs-docs-section">
+    <div class="container">
+        <div class="page-header">
+            <h1 id="tables">List of guest. (Using Entity Framework)</h1>
+        </div>
+        @Html.ActionLink("Create New", "Create", new object { }, new { @class = "bs-component btn btn-primary" })
+        <div class=" table-responsive ">
+            <table class="table table-hover">
+                <tr class="text-center">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WillAttend)
+                    </th>
+                    <th>Action</th>
+                </tr>
 
-            <div class=" table-responsive ">
-                <table class="table table-hover">
+                @foreach (var item in Model)
+                {
                     <tr class="text-center">
-                        <th>
-                            @Html.DisplayNameFor(model => model.Name)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Email)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Phone)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.WillAttend)
-                        </th>
-                        <th>Action</th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        @if (item.WillAttend == true)
+                        {
+                            <td class="table-success">Yes</td>
+                        }
+                        else
+                        {
+                            <td class="table-danger">No</td>
+
+                        }
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.GuestId }, new { @class = "btn btn-outline-primary" })
+                            @Html.ActionLink("Details", "Details", new { id = item.GuestId }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.GuestId }, new { @class = "btn btn-outline-danger" })
+                        </td>
                     </tr>
-
-                    @foreach (var item in Model)
-                    {
-                        <tr class="text-center">
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Email)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Phone)
-                            </td>
-                            @if (item.WillAttend == true)
-                            {
-                                <td class="table-success">Yes</td>
-                            }
-                            else
-                            {
-                                <td class="table-danger">No</td>
-
-                            }
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.GuestId }, new { @class = "btn btn-outline-primary" })
-                                @Html.ActionLink("Details", "Details", new { id = item.GuestId }, new { @class = "btn btn-outline-warning" })
-                                @Html.ActionLink("Delete", "Delete", new { id = item.GuestId }, new { @class = "btn btn-outline-danger" })
-                            </td>
-                        </tr>
-                    }
-
-                </table>
-            </div>
+                }
+            </table>
         </div>
     </div>
+</div>

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<AnkitSinghAssignments.Models.UserComment>
+
+@using AnkitSinghAssignments.TableHelper;
+
+<div class="container my-5 ">
+    <h3 class="text-danger my-5">Custom Table helper</h3>
+    <div class="row border-primary">
+        @Html.Table(new List<AnkitSinghAssignments.Models.UserComment>(Model), "table table-bordered border-info")
+    </div>
+</div>

@@ -37,3 +37,4 @@ D:\Ankitkumar-Singh\ASP-MVC\new working space\BusinessLayer\obj\Debug\BusinessLa
 D:\Ankitkumar-Singh\ASP-MVC\new working space\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 D:\Ankitkumar-Singh\ASP-MVC\new working space\BusinessLayer\obj\Debug\BusinessLayer.dll
 D:\Ankitkumar-Singh\ASP-MVC\new working space\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\Ankitkumar-Singh\ASP-MVC\new working space\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache

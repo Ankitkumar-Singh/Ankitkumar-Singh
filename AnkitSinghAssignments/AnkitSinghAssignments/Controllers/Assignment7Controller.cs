@@ -24,9 +24,8 @@ namespace AnkitSinghAssignments.Controllers
             return View();
         }
 
-        // POST: Assignment7/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        #region Adding bold, underscore text fromatting.
+
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "Id,UserName,Comments")] UserComment userComment)
@@ -53,6 +52,7 @@ namespace AnkitSinghAssignments.Controllers
 
             return View(userComment);
         }
+        #endregion
 
         protected override void Dispose(bool disposing)
         {

@@ -21,34 +21,33 @@ namespace AnkitSinghAssignments.Controllers
             return View();
         }
 
-        //Post form data to database and sent mail to the user.
+        #region Post form data to database and sent mail to the user.
         [HttpPost]
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
             if (ModelState.IsValid)
             {
+                //var body = "<p style='color:red;margin:20px;font-size:24px'>Email From: DailA Dabba </p><p style='color:green;margin:20px;font-size:20px'>Message:Your account created. thanks for using Dail A Dabba.</p><pstyle='color:red;margin:20px;font-size:24px'>Welcome to our Dabba Service</p>";
+                //var message = new MailMessage();
+                //message.To.Add(new MailAddress(guestResponse.Email));  // Sender email id
+                //message.From = new MailAddress("aress.iphone5@gmail.com");  // From email
+                //message.Subject = "Test email from webapp";
+                //message.Body = string.Format(body);
+                //message.IsBodyHtml = true;
 
-                var body = "<p style='color:red;margin:20px;font-size:24px'>Email From: DailA Dabba </p><p style='color:green;margin:20px;font-size:20px'>Message:Your account created. thanks for using Dail A Dabba.</p><pstyle='color:red;margin:20px;font-size:24px'>Welcome to our Dabba Service</p>";
-                var message = new MailMessage();
-                message.To.Add(new MailAddress(guestResponse.Email));  // Sender email id
-                message.From = new MailAddress("aress.iphone5@gmail.com");  // From email
-                message.Subject = "Test email from webapp";
-                message.Body = string.Format(body);
-                message.IsBodyHtml = true;
-
-                using (var smtp = new SmtpClient())
-                {
-                    var credential = new NetworkCredential
-                    {
-                        UserName = "aress.iphone5@gmail.com",
-                        Password = "Aress123$"
-                    };
-                    smtp.Credentials = credential;
-                    smtp.Host = "smtp.gmail.com";
-                    smtp.Port = 587;
-                    smtp.EnableSsl = true;
-                    smtp.Send(message);
-                }
+                //using (var smtp = new SmtpClient())
+                //{
+                //    var credential = new NetworkCredential
+                //    {
+                //        UserName = "aress.iphone5@gmail.com",
+                //        Password = "Aress123$"
+                //    };
+                //    smtp.Credentials = credential;
+                //    smtp.Host = "smtp.gmail.com";
+                //    smtp.Port = 587;
+                //    smtp.EnableSsl = true;
+                //    smtp.Send(message);
+                //}
 
                 // Insert form data to database.
                 string connectionString = ConfigurationManager.ConnectionStrings["GuestListContext"].ConnectionString;
@@ -74,5 +73,7 @@ namespace AnkitSinghAssignments.Controllers
                 return View();
             }
         }
+        #endregion
+
     }
 }

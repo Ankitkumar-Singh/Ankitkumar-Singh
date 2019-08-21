@@ -8,26 +8,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace AnkitSinghAssignments.Models
 {
+    using System.ComponentModel.DataAnnotations;
 
-using System;
-    using System.Collections.Generic;
-    
-public partial class GuestList
-{
+    public partial class GuestList
+    {
 
-    public int GuestId { get; set; }
+        public int GuestId { get; set; }
 
-    public string Name { get; set; }
+        [StringLength(50, MinimumLength = 5)]
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; }
 
-    public string Email { get; set; }
+        [Common.RemoteClientServer.RemoteClientServer("IsEmailAvailable", "Assignment11",
+        ErrorMessage = "Email already in use")]
+        public string Email { get; set; }
 
-    public decimal Phone { get; set; }
+        [Required(ErrorMessage = "Phone is required")]
+        public decimal Phone { get; set; }
 
-    public bool WillAttend { get; set; }
+        [Required(ErrorMessage = " WillAttend is required")]
+        public bool WillAttend { get; set; }
 
-}
+    }
 
 }
