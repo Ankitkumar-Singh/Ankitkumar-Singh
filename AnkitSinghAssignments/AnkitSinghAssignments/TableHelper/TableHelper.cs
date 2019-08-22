@@ -15,14 +15,14 @@ namespace AnkitSinghAssignments.TableHelper
 {
     public static class TableHelper
     {
-        #region Table Helper with employee list as parameter
+        #region Table Helper with User comments list as parameter
         /// <summary>
         /// Tables the specified emp.
         /// </summary>
         /// <param name="helper">The helper.</param>
-        /// <param name="emp">The emp.</param>
+        /// <param name="usrcmt">The emp.</param>
         /// <returns></returns>
-        public static HtmlString Table(this HtmlHelper helper, List<UserComment> emp)
+        public static HtmlString Table(this HtmlHelper helper, List<UserComment> usrcmt)
         {
             if (helper is null)
             {
@@ -39,7 +39,7 @@ namespace AnkitSinghAssignments.TableHelper
             }).ToList().ForEach(cell => htColumnsRow.Cells.Add(cell));
             ht.Rows.Add(htColumnsRow);
             //Get the remaining rows
-            emp.ForEach(delegate (UserComment obj)
+            usrcmt.ForEach(delegate (UserComment obj)
             {
                 HtmlTableRow htRow = new HtmlTableRow();
                 obj.GetType().GetProperties().ToList().ForEach(delegate (PropertyInfo prop)
@@ -59,7 +59,7 @@ namespace AnkitSinghAssignments.TableHelper
         }
         #endregion
 
-        #region Table Helper with employee list and class as parameter
+        #region Table Helper with User comments list and class as parameter
         /// <summary>
         /// Tables the specified data.
         /// </summary>
@@ -67,7 +67,7 @@ namespace AnkitSinghAssignments.TableHelper
         /// <param name="Data">The data.</param>
         /// <param name="class">The class.</param>
         /// <returns></returns>
-        public static IHtmlString Table(this HtmlHelper helper, List<UserComment> emp, string @class)
+        public static IHtmlString Table(this HtmlHelper helper, List<UserComment> usrcmt, string @class)
         {
             if (helper is null)
             {
@@ -85,7 +85,7 @@ namespace AnkitSinghAssignments.TableHelper
             }).ToList().ForEach(cell => htColumnsRow.Cells.Add(cell));
             ht.Rows.Add(htColumnsRow);
             //Get the remaining rows
-            emp.ForEach(delegate (UserComment obj)
+            usrcmt.ForEach(delegate (UserComment obj)
             {
                 HtmlTableRow htRow = new HtmlTableRow();
                 obj.GetType().GetProperties().ToList().ForEach(delegate (PropertyInfo prop)

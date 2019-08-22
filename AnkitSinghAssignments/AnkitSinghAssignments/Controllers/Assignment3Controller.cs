@@ -39,6 +39,9 @@ namespace AnkitSinghAssignments.Controllers
             return View(guest);
         }
 
+        /// <summary>Deletes the specified identifier.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Deletes sepecified user.</returns>
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {

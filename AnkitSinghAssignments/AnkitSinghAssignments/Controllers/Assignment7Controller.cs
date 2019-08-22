@@ -10,15 +10,16 @@ namespace AnkitSinghAssignments.Controllers
     {
         private GuestManagementEntities db = new GuestManagementEntities();
 
-        // GET: Assignment7
+        /// <summary>Indexes this instance.</summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View(db.UserComments.ToList());
         }
 
-        // GET: Assignment7/Details/5
 
-        // GET: Assignment7/Create
+        /// <summary>Creates this instance.</summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             return View();
@@ -26,6 +27,9 @@ namespace AnkitSinghAssignments.Controllers
 
         #region Adding bold, underscore text fromatting.
 
+        /// <summary>Creates the specified user comment.</summary>
+        /// <param name="userComment">The user comment.</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Create([Bind(Include = "Id,UserName,Comments")] UserComment userComment)

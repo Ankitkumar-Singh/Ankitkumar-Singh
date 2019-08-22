@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace AnkitSinghAssignments.Controllers
 {
+    /// <summary></summary>
+    /// <seealso cref="System.Web.Mvc.Controller" />
     public class Assignment4Controller : Controller
     {
         private GuestManagementEntities db = new GuestManagementEntities();
@@ -17,6 +19,9 @@ namespace AnkitSinghAssignments.Controllers
         }
 
         // GET: Assignment4/Details/5
+        /// <summary>Show detailses of specified identifier.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,9 +42,10 @@ namespace AnkitSinghAssignments.Controllers
             return View();
         }
 
-        // POST: Assignment4/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        /// <summary>Creates the specified guest list.</summary>
+        /// <param name="guestList">The guest list.</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "GuestId,Name,Email,Phone,WillAttend")] GuestList guestList)
@@ -54,7 +60,7 @@ namespace AnkitSinghAssignments.Controllers
             return View(guestList);
         }
 
-        // GET: Assignment4/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,9 +75,10 @@ namespace AnkitSinghAssignments.Controllers
             return View(guestList);
         }
 
-        // POST: Assignment4/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        /// <summary>Edits the specified guest list.</summary>
+        /// <param name="guestList">The guest list.</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "GuestId,Name,Email,Phone,WillAttend")] GuestList guestList)
@@ -85,7 +92,9 @@ namespace AnkitSinghAssignments.Controllers
             return View(guestList);
         }
 
-        // GET: Assignment4/Delete/5
+        /// <summary>Deletes the specified identifier.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -100,7 +109,9 @@ namespace AnkitSinghAssignments.Controllers
             return View(guestList);
         }
 
-        // POST: Assignment4/Delete/5
+        /// <summary>Deletes the confirmed.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

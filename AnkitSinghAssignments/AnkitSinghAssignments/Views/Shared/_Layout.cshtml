@@ -53,14 +53,12 @@
             </form>
         </div>
     </nav>
-
     <div id="body">
         @RenderSection("featured", required: false)
         <section class="content-wrapper main-content clear-fix">
             @RenderBody()
         </section>
     </div>
-
     <footer class="footer bg-primary footer-content">
         <div class="container">
             <span>© @DateTime.Now.Year All rights reserved. </span>

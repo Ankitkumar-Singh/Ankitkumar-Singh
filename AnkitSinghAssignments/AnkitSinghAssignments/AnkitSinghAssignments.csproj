@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\RemoteClientServer.cs" />
     <Compile Include="Controllers\Assignment11Controller.cs" />
     <Compile Include="Controllers\Assignment1Controller.cs" />
     <Compile Include="Controllers\Assignment2Controller.cs" />
@@ -168,7 +169,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Common\RemoteClientServer.cs" />
     <Compile Include="Models\DepartmentNewDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

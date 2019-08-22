@@ -27,7 +27,6 @@
                     </th>
                     <th>Action</th>
                 </tr>
-
                 @foreach (var item in Model)
                 {
                     <tr class="text-center">
@@ -47,7 +46,6 @@
                         else
                         {
                             <td class="table-danger">No</td>
-
                         }
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.GuestId }, new { @class = "btn btn-outline-primary" })

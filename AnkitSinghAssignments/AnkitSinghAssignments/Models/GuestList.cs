@@ -10,6 +10,7 @@
 
 namespace AnkitSinghAssignments.Models
 {
+    using AnkitSinghAssignments.Models.Common;
     using System.ComponentModel.DataAnnotations;
 
     public partial class GuestList
@@ -21,7 +22,7 @@ namespace AnkitSinghAssignments.Models
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Common.RemoteClientServer.RemoteClientServer("IsEmailAvailable", "Assignment11",
+        [RemoteClientServer.RemoteClientServer("IsEmailAvailable", "Assignment11",
         ErrorMessage = "Email already in use")]
         public string Email { get; set; }
 

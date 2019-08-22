@@ -1,8 +1,6 @@
 ﻿using AnkitSinghAssignments.Models;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Net;
-using System.Net.Mail;
 using System.Web.Mvc;
 
 namespace AnkitSinghAssignments.Controllers

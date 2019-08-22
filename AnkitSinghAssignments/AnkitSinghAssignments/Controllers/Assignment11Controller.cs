@@ -9,7 +9,7 @@ namespace AnkitSinghAssignments.Controllers
         private GuestManagementEntities db = new GuestManagementEntities();
 
         #region Inserting values in databse.
-        // GET: Assignment11/Create
+        // Validating user email and inserting unique email id and user details in database.
         public ActionResult index()
         {
             return View();

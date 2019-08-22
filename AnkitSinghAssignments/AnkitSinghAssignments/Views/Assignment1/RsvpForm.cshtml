@@ -3,7 +3,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 @* Form to get inuput details of guest.  *@
 <div class="container">
     <div class="card border-primary mb-3">
@@ -28,11 +27,16 @@
                 </div>
                 <div class="form-group">
                     <label>Will you attend?</label>
-                    @Html.DropDownListFor(x => x.WillAttend, new[] {
-                    new SelectListItem() {Text = "Yes, I'll be there",
-                    Value = bool.TrueString},
-                    new SelectListItem() {Text = "No, I can't come",
-                    Value = bool.FalseString}
+                    @Html.DropDownListFor(x => x.WillAttend, new[]
+                    {
+                        new SelectListItem() {
+                            Text = "Yes, I'll be there",
+                            Value = bool.TrueString
+                        },
+                        new SelectListItem() {
+                            Text = "No, I can't come",
+                            Value = bool.FalseString
+                        }
                     }, "Choose an option", new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.WillAttend)
                 </div>

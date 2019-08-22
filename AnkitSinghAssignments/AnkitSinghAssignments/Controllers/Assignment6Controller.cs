@@ -8,7 +8,8 @@ namespace AnkitSinghAssignments.Controllers
     {
         private GuestManagementEntities db = new GuestManagementEntities();
 
-        // To show table helper 
+        /// <summary>Indexes this instance.</summary>
+        /// <returns> To show table helper.</returns>
         public ActionResult Index()
         {
             return View(db.UserComments.ToList());

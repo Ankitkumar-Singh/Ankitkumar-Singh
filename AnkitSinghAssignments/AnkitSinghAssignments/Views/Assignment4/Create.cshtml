@@ -1,5 +1,4 @@
 ﻿@model AnkitSinghAssignments.Models.GuestList
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Assignment";
@@ -46,8 +45,8 @@
                             <div class="checkbox">
                                 @Html.DropDownList("WillAttend", new List<SelectListItem>
                                         {
-                                        new SelectListItem { Text = "Yes", Value="true" },
-                                        new SelectListItem { Text = "No", Value="false" }
+                                            new SelectListItem { Text = "Yes", Value="true" },
+                                            new SelectListItem { Text = "No", Value="false" }
                                         }, "Will you attend?", new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.WillAttend, "", new { @class = "text-danger" })
                             </div>

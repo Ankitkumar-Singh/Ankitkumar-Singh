@@ -4,29 +4,27 @@
 }
 
 @* Thank you message when guest subm *@
-    <div class="container">
-        <div class="jumbotron header-message text-center">
-            <div class="container" id="mainContent">
-                <div class="row">
-                    <div class="btn btn-white btn-lg">@Html.ActionLink("Home", "Index")</div>
-                    <div class="btn btn-white btn-lg">@Html.ActionLink("Back", "RsvpForm")</div>
-                </div>
-
-                <h1>Thank you, @Model.Name!</h1>
-                <h2>
-                    @if (Model.WillAttend == true)
-                    {
-                        @:It's great that you're coming. The drinks are already in the fridge!
-                    }
-                    else
-                    {
-                        @:Sorry to hear that you can't make it, but thanks for letting us know.
-                    }
-                </h2>
-                <img height="50%" width="50%" src="~/Assets/images/Thank-You.png" alt="Thank you" />
-
-                <br /><br />
-               
+<div class="container">
+    <div class="jumbotron header-message text-center">
+        <div class="container" id="mainContent">
+            <div class="row">
+                <div class="btn btn-white btn-lg">@Html.ActionLink("Home", "Index")</div>
+                <div class="btn btn-white btn-lg">@Html.ActionLink("Back", "RsvpForm")</div>
             </div>
+
+            <h1>Thank you, @Model.Name!</h1>
+            <h2>
+                @if (Model.WillAttend == true)
+                {
+                    @:It's great that you're coming. The drinks are already in the fridge!
+                }
+                else
+                {
+                    @:Sorry to hear that you can't make it, but thanks for letting us know.
+                }
+            </h2>
+            <img height="50%" width="50%" src="~/Assets/images/Thank-You.png" alt="Thank you" />
+            <br /><br />
         </div>
     </div>
+</div>

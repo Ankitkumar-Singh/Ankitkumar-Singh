@@ -67,6 +67,9 @@ namespace WebApplication5.Controllers
         #endregion
 
         #region TO delete Multiple selected values
+        /// <summary>Multiple delete.</summary>
+        /// <param name="departmentDelete">The department delete.</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult MultipleDelete(IEnumerable<int> departmentDelete)
         {

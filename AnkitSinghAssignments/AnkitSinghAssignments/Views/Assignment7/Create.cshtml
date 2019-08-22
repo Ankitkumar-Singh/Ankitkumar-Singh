@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Create";
 }
-
 <div class="container">
     <div class="mb-3">
         @Html.ActionLink("Home", "Index", "Assignment1", new object { }, new { @class = "btn btn-primary" })
@@ -16,7 +15,6 @@
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
-
                         <div class="form-horizontal">
                             <h4>Add comments</h4>
                             <hr />
@@ -32,10 +30,10 @@
                                 @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label" })
                                 <div class="col-md-12">
                                     @Html.TextAreaFor(model => model.Comments, new
-                               {
-                                       @class = "form-control",
-                                       cols = 50,
-                               })
+                                   {
+                                        @class = "form-control",
+                                        cols = 50,
+                                   })
                                     @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
                                 </div>
                             </div>

@@ -14,7 +14,6 @@
                 <br> 1. Department Name,<br> 2. Department Location<br> 3. Employee Count
             </p>
         </div>
-
         @*Form Contains Radio Buttons and TextBox for Search Functionality*@
         @using (@Html.BeginForm("Index", "Assignment9", FormMethod.Get))
         {
@@ -94,7 +93,6 @@
         }
         @* Pagination is displayed *@
         @Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"], sortBy = Request["sortBy"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayItemSliceAndTotal = true })
-
     </div>
 </div>
 
